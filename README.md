@@ -33,9 +33,9 @@ ASIClient是ASIHTTPRequest的扩展，提供简单易用的GET,POST,文件上传
 ```objective-c
 + (ASIHTTPRequest *)ResumeDown_Path:(NSString *)path writeTo:(NSString *)destinationPath tempPath:(NSString *)tempPath fileName:(NSString *)name setProgress:(KKProgressBlock )progressBlock completed:(ASIBasicBlock )completedBlock failed:(KKFailedBlock )failed;
 ```
-## NSOperationQueu管理
-* 上述接口均返回，ASIHTTPRequest的指针，可用于NSOperationQueu的管理；
-* 也可用于ASINetworkQueu管理
+## NSOperationQueue管理
+* 上述接口均返回，ASIHTTPRequest的指针，可用于NSOperationQueue的管理；
+* 也可用于ASINetworkQueue管理
 
 ## 如何使用
 1. 把ASIClient.h和ASIClient.m 导入项目中；
