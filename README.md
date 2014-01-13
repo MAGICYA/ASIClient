@@ -2,13 +2,14 @@ ASIClient
 =========
 
 ASIClient是ASIHTTPRequest的扩展，提供简单易用的GET,POST,文件上传,文件下载等网络请求接口。(Block,JSON)
+所返回的接口数据，已经做JSON处理，可直接在回调块中，调用 JSON 取得数据，调用stringData 取得 string数据；
 
 
 ## 使用需知
-1.本项目为 非ARC 环境
-2.本项目依赖 ASIHTTPRequest 框架，[https://github.com/pokeb/asi-http-request](https://github.com/pokeb/asi-http-request) 请先配置
-3.使用前，请先配置 kAPI_BASE_URL 的根 url; 请先在 ASIClient.m 的头部配置，kAPI_BASE_URL 的值；
-4.Debuglog 信息 请配置 IS_ENABLE_DEBUG_LOG 开关；
+1. 本项目为 非ARC 环境
+2. 本项目依赖 ASIHTTPRequest 框架，[https://github.com/pokeb/asi-http-request](https://github.com/pokeb/asi-http-request) 请先配置
+3. 使用前，请先配置 kAPI_BASE_URL 的根 url; 请先在 ASIClient.m 的头部配置，kAPI_BASE_URL 的值；
+4. Debuglog 信息 请配置 IS_ENABLE_DEBUG_LOG 开关；
 
 ## 可用接口
 ```objective-c
@@ -29,7 +30,9 @@ ASIClient是ASIHTTPRequest的扩展，提供简单易用的GET,POST,文件上传
 ```objective-c
 + (ASIHTTPRequest *)UploadData_Path:(NSString *)path fileData:(NSData *)fData forKey:(NSString *)dataKey params:(NSDictionary *)params SetProgress:(KKProgressBlock )progressBlock completed:(KKCompletedBlock )completedBlock failed:(KKFailedBlock )failed;
 ```
-
+```objective-c
++ (ASIHTTPRequest *)ResumeDown_Path:(NSString *)path writeTo:(NSString *)destinationPath tempPath:(NSString *)tempPath fileName:(NSString *)name setProgress:(KKProgressBlock )progressBlock completed:(ASIBasicBlock )completedBlock failed:(KKFailedBlock )failed;
+```
 ## 如何使用
 ```objective-c
 #pragma mark ASI ASIClient Test
